@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.7.0)
 project(asio-sample VERSION 0.1.0)
 
 if (NOT EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-    execute_process(COMMAND conan install ${CMAKE_CURRENT_SOURCE_DIR})
+    execute_process(COMMAND conan install --build=missing ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
