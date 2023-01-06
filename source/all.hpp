@@ -131,7 +131,6 @@ namespace SimpleFastService_NS {
 				std::make_tuple(),
 				std::make_tuple(f_alloc));
 
-			const auto startProcessing = std::chrono::system_clock::now();
 			http::async_read(
 				f_socket,
 				f_buffer,
@@ -142,10 +141,10 @@ namespace SimpleFastService_NS {
 					else {
 						const auto startProcessing = std::chrono::system_clock::now();
 						processRequest(f_parser->get());
+						// [Processing time]
 						std::cout << "[PCD]: " << static_cast<std::chrono::duration<double>>(std::chrono::system_clock::now() - startProcessing).count() << std::endl;
 					}
 				});
-			std::cout << "[R&P]: " << static_cast<std::chrono::duration<double>>(std::chrono::system_clock::now() - startProcessing).count() << std::endl;
 		}
 
 		void processRequest(const Request& req)
