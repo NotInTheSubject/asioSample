@@ -3,21 +3,15 @@
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
 #include <boost/beast/version.hpp>
-#include <boost/asio/ip/tcp.hpp>
-#include <boost/asio/awaitable.hpp>
-#include <boost/asio/co_spawn.hpp>
-#include <boost/asio/use_awaitable.hpp>
-#include <boost/config.hpp>
+#include <boost/asio.hpp>
 
 #include <algorithm>
-#include <cstdlib>
 #include <iostream>
+#include <list>
 #include <map>
 #include <memory>
 #include <string>
 #include <string_view>
-#include <thread>
-#include <vector>
 
 #include "fields_alloc.hpp"
 
